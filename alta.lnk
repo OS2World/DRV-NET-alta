@@ -1,0 +1,74 @@
+========================================================
+Sundance ST201 ALTA (Another) NDIS 2.0.1 MAC driver 1.00
+========================================================
+
+1.Introduction
+
+Sundance ST201 and IC+ IP100A are the Fast Ethernet chipsets.
+D-Link DFE-550TX is known as the adapter which uses ST201.
+It seems that D-Link had provided the official driver, though 
+I've never seen it actually. We cannot acquire it now.
+IC+ provides the datasheet, but does not provide the driver for OS/2 
+on their website.
+
+Included files are:
+alta.os2	NDIS 2.0.1 MAC driver
+alta.nif	Network Information File
+alta.sym	Symbol Map file
+alta.lnk	Document (this file)
+source.zip	source files
+
+You could download the latest file on the gomi:NDIS MAC Drivers page,
+URL http://www.os2warp.be/index2.php?name=gomindis .
+
+
+2.No Warranty
+
+This code is provided 'AS IS' and any warranties are disclaimed.
+
+
+3.Considerable configuration keywords
+
+- BurstThresh, UrgentThresh, PollPeriod are not configurable 
+  at this version driver.
+- IP100A LF has not TxStartThresh nor RxEarlyThresh nor Countdown 
+  registers. Perhaps store and forward.
+- NETADDRESS and ENWOL are the hidden keywords. You should not use:-)
+
+
+4.Note
+
+Tested with DFE-550TX only.
+I don't know whether this driver can work with IP100A... 
+Error recovery is not sufficiently tested.
+
+
+5.Redistribution with modification
+
+Your should add your copyright notice, 
+"(c)Copyright 2006 your name. All rights reserved."
+and remove mine (if it exists),
+"(c)Copyright 2006 chagrin. Some rights reserved."
+
+This means that the modified binary/source is not mine, but yours, 
+regardless of the degree of the modification. 
+You can redistribute, of course, that for the commercial purpose 
+without any fee to me, without releasing the source, if you want.
+
+Don't forget that I'm never liable for your product.
+(You, also, should add a disclaimer.)
+
+
+6.History
+
+ver.1.00 - 12/26, 2006.
+-  Initial release.
+
+
+7.Contact to the author
+
+Access os2warp.be Technical Support Center,
+URL http://www.os2warp.be/support/
+ or
+Email to YANAGIHARA Nobuyuki,
+ <VYL00513@nifty.ne.jp>

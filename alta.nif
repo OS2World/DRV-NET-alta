@@ -1,0 +1,114 @@
+[ALTA]
+Type = NDIS
+Title = "Sundance ST201 MAC Adapter"
+Version = 2.01
+DriverName = ALTA$
+Xports = NETBEUI, LANDD
+
+[FILE]
+Name = alta.os2
+Path = IBMCOM\MACS
+
+
+[SLOT]
+display = "Slot Number of the Adapter"
+type = decimal
+;default = "0"
+optional = yes
+range = 0-7
+help = "SLOT=n, n=0..,7 specifies the PCI SLOT index number 
+to look for the adapter. PCI SLOT index starts 0. Default is 0. 
+This isn't required unless there are multiple adapters."
+
+
+[TXQUEUE]
+display = "Maximum TX queue count"
+type = decimal
+;default = 8
+optional = yes
+range = 4-83
+help = "TXQUEUE=n, n=4..83, specifies the number of transmits 
+which can be queued up by the driver. The default value is 8."
+
+
+[RXQUEUE]
+display = "Maximum RX queue count"
+type = decimal
+;default = 16
+optional = yes
+range = 6-83
+help = "RXQUEUE=n, n=6..83, specifies the number of recieves 
+which can be queued up by the driver. The default value is 16."
+
+
+[TXEARLY]
+display = "Early Transmit Start"
+type = decimal
+;default = 1536
+optional = yes
+range = 4-2044
+;step = 4
+help = "TXEARLY=n, n=4..2044, specifies the amount copied into FIFO in byte 
+that the transmit action can be started. If this value is too low, 
+the transmit FIFO underrun may occur. The default value is 1536, 
+which is Store and Foward on normal frame size condition."
+
+
+[RXEARLY]
+display = "Early Receive Start"
+type = decimal
+;default = 256
+optional = yes
+range = 8-2044
+;step = 4
+help = "RXEARLY=n, n=8..2044, specifies the amount copied into FIFO in byte 
+that the receive DMA can be started. The default value is 256."
+
+
+[OPENBIND]
+display = "Open adapter in bind process"
+type = string
+strlength = 4
+;default = NO
+optional = yes
+set = YES,NO
+help = "OPENBIND=str, specifies the adapter state just after the bind 
+process is done successfully. If YES is specified, the adapter is 
+in the open state. The default string is NO."
+
+
+[IRQ15OVR]
+display = "Accept IRQ level > 15"
+type = string
+strlength = 4
+;default = NO
+optional = yes
+set = YES,NO
+help = "IRQ15OVR=str, specifies that the range of the acceptable 
+IRQ level is either [0..15] or [0..255]. If YES is specified, 
+the range is [0..255](no range check). The default string is NO."
+
+
+;[ENWOL]
+;display = "Enable Wake on Lan"
+;type = string
+;strlength = 4
+;;default = NO
+;optional = yes
+;set = YES,NO
+;help = "ENWOL=str, specifies the Wake-on-Lan with the Magic Packet 
+;at the OS shutdown time. If YES is specified, Wake-on-Lan is enabled. 
+;The default string is NO."
+
+
+;[NETADDRESS]
+;tag = NETADDRESS
+;display = "Network adapter address"
+;type = hexstring
+;strlength = 12
+;optional = yes
+;editable = yes
+;help = "NETADDRESS alternates the MAC address of the adapter 
+;with the one fixed in the hardware(in the EEPROM)."
+
+
